@@ -71,36 +71,16 @@ public class ClientEvents {
         }
         if (mc.player != null && mc.level != null) {
 
-            // 4. Check Meditation Hold (M key)
-            if (mc.player != null && mc.level != null) {
-                boolean isMeditateKeyDown = KeyBindings.MEDITATE.isDown();
-                PacketDistributor.sendToServer(new MeditatePacket(isMeditateKeyDown));
-                boolean isShiftDown = net.minecraft.client.gui.screens.Screen.hasShiftDown();
+            var bendingData = mc.player.getData(com.minecraft.atlamod.ModAttachments.BENDING_DATA);
+            if (bendingData.isMeditating()) {
+                // Completely freeze client inputs and velocity
+                mc.player.input.forwardImpulse = 0.0f;
+                mc.player.input.leftImpulse = 0.0f;
+                mc.player.input.jumping = false;
+                mc.player.input.shiftKeyDown = true;
 
-                while (KeyBindings.ABILITY_1.consumeClick()) {
-                    net.neoforged.neoforge.network.PacketDistributor.sendToServer(new com.minecraft.atlamod.network.UseAbilityPacket(isShiftDown ? 4 : 0));
-                }
-                while (KeyBindings.ABILITY_2.consumeClick()) {
-                    net.neoforged.neoforge.network.PacketDistributor.sendToServer(new com.minecraft.atlamod.network.UseAbilityPacket(isShiftDown ? 5 : 1));
-                }
-                while (KeyBindings.ABILITY_3.consumeClick()) {
-                    net.neoforged.neoforge.network.PacketDistributor.sendToServer(new com.minecraft.atlamod.network.UseAbilityPacket(isShiftDown ? 6 : 2));
-                }
-                while (KeyBindings.ABILITY_4.consumeClick()) {
-                    net.neoforged.neoforge.network.PacketDistributor.sendToServer(new com.minecraft.atlamod.network.UseAbilityPacket(isShiftDown ? 7 : 3));
-                }
-
-                var data = mc.player.getData(com.minecraft.atlamod.ModAttachments.BENDING_DATA);
-                if (data.isMeditating()) {
-                    // Completely freeze client inputs and velocity
-                    mc.player.input.forwardImpulse = 0.0f;
-                    mc.player.input.leftImpulse = 0.0f;
-                    mc.player.input.jumping = false;
-                    mc.player.input.shiftKeyDown = true;
-
-                    // Stop local velocity so you don't slide
-                    mc.player.setDeltaMovement(0, mc.player.getDeltaMovement().y, 0);
-                }
+                // Stop local velocity so you don't slide
+                mc.player.setDeltaMovement(0, mc.player.getDeltaMovement().y, 0);
             }
             // 3. Check for 'N' key presses (Upgrade Menu)
             while (KeyBindings.UPGRADE_MENU.consumeClick()) {

@@ -23,7 +23,15 @@ blood channeler can only be stopped by another blood channeler.
 | Loader | Forge 47.4.28+ |
 | Java | 17+ |
 
-Other versions: a [Fabric 1.21.11](https://github.com/Niilo411/atla-mod-fabric) version exists too.
+## Other versions
+
+The mod also exists for other loaders and Minecraft versions:
+
+| Loader | Minecraft | Repository |
+|---|---|---|
+| NeoForge | 1.21.1 | [elemental-paths](https://github.com/Niilo411/elemental-paths) |
+| Fabric | 1.21.11 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric) (`master` branch) |
+| Fabric | 26.3 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric/tree/mc-26.3) (`mc-26.3` branch) |
 
 ## Installation
 

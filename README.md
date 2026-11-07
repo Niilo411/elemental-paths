@@ -9,7 +9,7 @@ like. A fire channeler fights at range and sets the ground alight. A water chann
 find water. An earth channeler rearranges the terrain and gives it back afterwards. A
 blood channeler can only be stopped by another blood channeler.
 
-![Build](https://github.com/Niilo411/atla-mod/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/Niilo411/elemental-paths/actions/workflows/build.yml/badge.svg)
 
 > **Status:** in active development. Playable and feature-complete across all four
 > elements and all eight sub-elements, but not yet released on Modrinth and not yet
@@ -23,11 +23,21 @@ blood channeler can only be stopped by another blood channeler.
 | Loader | NeoForge 21.1.248+ |
 | Java | 21+ |
 
+## Other versions
+
+The mod also exists for other loaders and Minecraft versions:
+
+| Loader | Minecraft | Repository |
+|---|---|---|
+| Fabric | 1.21.11 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric) (`master` branch) |
+| Fabric | 26.3 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric/tree/mc-26.3) (`mc-26.3` branch) |
+| Forge | 1.20.1 | [atla-mod-forge](https://github.com/Niilo411/atla-mod-forge) |
+
 ## Installation
 
 1. Install [NeoForge 21.1.248+](https://neoforged.net/) for Minecraft 1.21.1.
 2. Download `elemental_paths-<version>.jar` from
-   [Releases](https://github.com/Niilo411/atla-mod/releases).
+   [Releases](https://github.com/Niilo411/elemental-paths/releases).
 3. Drop it into your `mods` folder.
 4. Launch the NeoForge profile.
 
@@ -150,8 +160,8 @@ The target is never optional, so these work for setting other people up on a ser
 ## Building from source
 
 ```
-git clone https://github.com/Niilo411/atla-mod.git
-cd atla-mod
+git clone https://github.com/Niilo411/elemental-paths.git
+cd elemental-paths
 ./gradlew build
 ```
 

@@ -9,11 +9,30 @@ like. A fire channeler fights at range and sets the ground alight. A water chann
 find water. An earth channeler rearranges the terrain and gives it back afterwards. A
 blood channeler can only be stopped by another blood channeler.
 
-![Build](https://github.com/Niilo411/atla-mod-forge/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/Niilo411/elemental-paths/actions/workflows/build.yml/badge.svg?branch=forge-1.20.1)
 
 > **Status:** in active development. Playable and feature-complete across all four
 > elements and all eight sub-elements, but not yet released on Modrinth and not yet
 > versioned for public consumption. Expect rough edges.
+
+## Download
+
+Every version of the mod lives in this one repository. Find your mod loader and
+Minecraft version below and click the jar. The jar's file name says which loader it is
+for, so you can always tell them apart in your `mods` folder.
+
+| Loader | Minecraft | Latest | Download | Older versions | Source code |
+|---|---|---|---|---|---|
+| **NeoForge** | 1.21.1 | 1.8.2 | [elemental_paths-neoforge-1.21.1-1.8.2.jar](https://github.com/Niilo411/elemental-paths/releases/download/neoforge-1.21.1-v1.8.2/elemental_paths-neoforge-1.21.1-1.8.2.jar) | [NeoForge releases](https://github.com/Niilo411/elemental-paths/releases?q=neoforge-1.21.1&expanded=true) | [`master`](https://github.com/Niilo411/elemental-paths/tree/master) |
+| **Forge** | 1.20.1 | 2.1.2 | [elemental_paths-forge-1.20.1-2.1.2.jar](https://github.com/Niilo411/elemental-paths/releases/download/forge-1.20.1-v2.1.2/elemental_paths-forge-1.20.1-2.1.2.jar) | [Forge releases](https://github.com/Niilo411/elemental-paths/releases?q=forge-1.20.1&expanded=true) | [`forge-1.20.1`](https://github.com/Niilo411/elemental-paths/tree/forge-1.20.1) |
+| **Fabric** | 1.21.11 | 2.1.2 | [elemental_paths-fabric-1.21.11-2.1.2.jar](https://github.com/Niilo411/elemental-paths/releases/download/fabric-1.21.11-v2.1.2/elemental_paths-fabric-1.21.11-2.1.2.jar) | [Fabric 1.21.11 releases](https://github.com/Niilo411/elemental-paths/releases?q=fabric-1.21.11&expanded=true) | [`fabric-1.21.11`](https://github.com/Niilo411/elemental-paths/tree/fabric-1.21.11) |
+| **Fabric** | 26.3 | 3.1.2 | [elemental_paths-fabric-26.3-3.1.2.jar](https://github.com/Niilo411/elemental-paths/releases/download/fabric-26.3-v3.1.2/elemental_paths-fabric-26.3-3.1.2.jar) | [Fabric 26.3 releases](https://github.com/Niilo411/elemental-paths/releases?q=fabric-26.3&expanded=true) | [`fabric-26.3`](https://github.com/Niilo411/elemental-paths/tree/fabric-26.3) |
+
+Releases are tagged `<loader>-<minecraft>-v<version>`, for example `forge-1.20.1-v2.1.2`.
+Fabric also needs [Fabric API](https://modrinth.com/mod/fabric-api) for the same Minecraft version.
+
+> You are reading the README of the **forge-1.20.1** branch (Forge 1.20.1). The rest of this
+> page, from Requirements down, is about that version.
 
 ## Requirements
 
@@ -23,21 +42,10 @@ blood channeler can only be stopped by another blood channeler.
 | Loader | Forge 47.4.28+ |
 | Java | 17+ |
 
-## Other versions
-
-The mod also exists for other loaders and Minecraft versions:
-
-| Loader | Minecraft | Repository |
-|---|---|---|
-| NeoForge | 1.21.1 | [elemental-paths](https://github.com/Niilo411/elemental-paths) |
-| Fabric | 1.21.11 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric) (`master` branch) |
-| Fabric | 26.3 | [atla-mod-fabric](https://github.com/Niilo411/atla-mod-fabric/tree/mc-26.3) (`mc-26.3` branch) |
-
 ## Installation
 
 1. Install [Forge 47.4.28+](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html) for Minecraft 1.20.1.
-2. Download `elemental_paths-<version>.jar` from
-   [Releases](https://github.com/Niilo411/atla-mod-forge/releases).
+2. Download `elemental_paths-forge-1.20.1-<version>.jar` from the [Download](#download) table above.
 3. Drop it into your `mods` folder.
 4. Launch the Forge profile.
 
@@ -160,8 +168,8 @@ The target is never optional, so these work for setting other people up on a ser
 ## Building from source
 
 ```
-git clone https://github.com/Niilo411/atla-mod-forge.git
-cd atla-mod-forge
+git clone -b forge-1.20.1 https://github.com/Niilo411/elemental-paths.git
+cd elemental-paths
 ./gradlew build
 ```
 
